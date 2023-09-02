@@ -38,6 +38,6 @@ Stay updated with the progress of Jarvis! Every week, I'll be sharing video upda
 If you encounter any issues or have suggestions for improvement, please [open an issue](https://github.com/listentothefrog/JARVIS/issues) on this repository. your feedback is invaluable!
 
 ## 📜 License:
-This project is licensed under the [MIT License](link-to-license).
+This project is licensed under the [MIT License](https://github.com/listentothefrog/JARVIS/blob/dev/LICENSE).
 
 If you're excited about this project, don't forget to ⭐️ the repository to show your support.
