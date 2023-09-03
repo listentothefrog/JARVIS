@@ -1,0 +1,21 @@
+{
+  "intents": [
+    {
+      "tag": "GoodMorning",
+      "patterns": ["Good morning", "Morning!", "Hello, it's morning"]
+    },
+    {
+      "tag": "GoodAfternoon",
+      "patterns": ["Good afternoon", "Afternoon!", "Hello, it's afternoon"]
+    },
+    {
+      "tag": "GoodEvening",
+      "patterns": ["Good evening", "Evening!", "Hello, it's evening"]
+    }
+  ],
+  "responses": {
+    "GoodMorning": ["Good morning! Shashank"],
+    "GoodAfternoon": ["Good afternoon! Ready for some productivity?"],
+    "GoodEvening": ["Good evening! How was your day?"]
+  }
+}
