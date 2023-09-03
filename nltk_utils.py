@@ -12,15 +12,3 @@ def stem(word):
 
 def bag_of_word(all_words):
     pass
-
-
-a = "Hello world"
-print(a)
-a = tokenize(a)
-print(a)
-
-
-words  = ["Organize", "organizes", "organizing"]
-
-stemmed_words = [stem(w) for w in words]
-print(stemmed_words)
