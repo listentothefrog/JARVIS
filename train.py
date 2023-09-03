@@ -80,6 +80,11 @@ train_loader = DataLoader(dataset=dataset,
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu') # checks if device has a gpu else uses cpu
 
+if torch.cuda.is_available(): 
+    print("using gpu")
+else: 
+    print("using cpu")
+
 model = NeuralNet(input_size, hidden_size, output_size).to(device)
 
 # Loss and optimizer
