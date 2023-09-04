@@ -6,6 +6,7 @@ import torch
 import json
 from nltk_utils import bag_of_words, tokenize
 from model import NeuralNet
+import random 
 
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
@@ -41,9 +42,34 @@ intents.presences = False
 bot = commands.Bot(command_prefix='$', intents=intents)
 
 @bot.event
-
 async def on_ready(): 
     print(f'We have logged in as {bot.user.display_name}')
 
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
+
+    user_message = message.content
+    sentence = tokenize(user_message)
+    X = bag_of_words(sentence, all_words)
+    X = X.reshape(1, X.shape[0])
+    X = torch.from_numpy(X).to(device)
+
+    output = model(X)
+    _, predicted = torch.max(output, dim=1)
+
+    tag = tags[predicted.item()]
+
+    probs = torch.softmax(output, dim=1)
+    prob = probs[0][predicted.item()]
+    
+    if prob.item() > 0.75:
+        for intent in intents_data['intents']:
+            if tag == intent["tag"]:
+                response = random.choice(intent['responses'])
+                await message.channel.send(response)
+    else:
+        await message.channel.send("I do not understand...")
 
 bot.run(BOT_TOKEN)
