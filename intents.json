@@ -1,21 +1,84 @@
 {
   "intents": [
     {
-      "tag": "GoodMorning",
-      "patterns": ["Good morning", "Morning!", "Hello, it's morning"]
+      "tag": "Greetings",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Good morning",
+        "Good afternoon",
+        "Good evening",
+        "What's up",
+        "Hi there",
+        "Hey there",
+        "Yo",
+        "Hi!",
+        "Hello!",
+        "Hi, how are you?",
+        "Hello, what's new?",
+        "Greetings",
+        "Hi, can I help you?",
+        "Hello, is anyone there?",
+        "Hi, I'm here to chat",
+        "Hey, what's cookin'?",
+        "Hey, long time no see!",
+        "Hey, buddy!",
+        "What's kickin'?",
+        "How's it going?",
+        "Hey, how's your day?"
+      ],
+      "responses": [
+        "Hey! How's it going? What can I assist you with today?",
+        "Hi there! I'm here to chat. What's on your mind?",
+        "Yo! What's the word? How can I help you today?",
+        "Hey, buddy! Long time no see. What can I do for you?",
+        "Hello! Is there something specific you'd like to know?",
+        "Hi! How's your day going so far? What can I assist you with?",
+        "Greetings! How can I be of service?",
+        "Howdy! What's on your agenda today? How can I assist?",
+        "Hi there! I'm here to chat. Anything interesting happening?",
+        "Hey, what's cookin'? How can I make your day better?",
+        "Hello! Anything new and exciting happening in your world?",
+        "Hi! How can I brighten your day today?",
+        "Hello! Is there anything specific you'd like to talk about?",
+        "Hi there! I'm here to help. What's on your mind?",
+        "Hey, stranger! It's been a while. What brings you here today?",
+        "What's up? How can I assist you today?",
+        "Hi, can I help you with anything in particular?",
+        "Hello, is there anything you'd like to discuss today?",
+        "Hey, how's your day going? How can I assist you?",
+        "Hey there! It's always good to see you. What's on your plate today?",
+        "What's kickin'? How can I make your day awesome?",
+        "Hey! How's everything going? What can I do for you?",
+        "Hey there! I'm all ears. What's on your mind?",
+        "Hey, long time no see! What's new with you?",
+        "Hi, how are you doing today? What can I assist you with?"
+      ]
     },
     {
-      "tag": "GoodAfternoon",
-      "patterns": ["Good afternoon", "Afternoon!", "Hello, it's afternoon"]
-    },
-    {
-      "tag": "GoodEvening",
-      "patterns": ["Good evening", "Evening!", "Hello, it's evening"]
+      "tag": "Goodbye",
+      "patterns": [
+        "Goodbye",
+        "See you later",
+        "Bye",
+        "Take care",
+        "Catch you later",
+        "Until next time",
+        "Bye for now",
+        "Later"
+      ],
+      "responses": [
+        "Bye! Have a fantastic day!",
+        "See you later! Take care and stay awesome!",
+        "Bye for now! If you ever need assistance, I'll be here.",
+        "Farewell! Feel free to return anytime.",
+        "Goodbye! Don't hesitate to reach out if you have questions.",
+        "Catch you later! Have a wonderful day!",
+        "Until next time! Feel free to drop by whenever you like.",
+        "Bye for now! If there's anything you need in the future, just ask.",
+        "Later! If you ever want to chat, I'll be here."
+      ]
     }
-  ],
-  "responses": {
-    "GoodMorning": ["Good morning! Shashank"],
-    "GoodAfternoon": ["Good afternoon! Ready for some productivity?"],
-    "GoodEvening": ["Good evening! How was your day?"]
-  }
+  ]
 }
