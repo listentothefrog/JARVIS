@@ -1,83 +1,172 @@
 {
   "intents": [
     {
-      "tag": "Greetings",
+      "tag": "turn_on_lights",
       "patterns": [
-        "Hi",
-        "Hello",
-        "Hey",
-        "Good morning",
-        "Good afternoon",
-        "Good evening",
-        "What's up",
-        "Hi there",
-        "Hey there",
-        "Yo",
-        "Hi!",
-        "Hello!",
-        "Hi, how are you?",
-        "Hello, what's new?",
-        "Greetings",
-        "Hi, can I help you?",
-        "Hello, is anyone there?",
-        "Hi, I'm here to chat",
-        "Hey, what's cookin'?",
-        "Hey, long time no see!",
-        "Hey, buddy!",
-        "What's kickin'?",
-        "How's it going?",
-        "Hey, how's your day?"
+        "Turn on the lights",
+        "Switch on the lights",
+        "Illuminate the room"
       ],
       "responses": [
-        "Hey! How's it going? What can I assist you with today?",
-        "Hi there! I'm here to chat. What's on your mind?",
-        "Yo! What's the word? How can I help you today?",
-        "Hey, buddy! Long time no see. What can I do for you?",
-        "Hello! Is there something specific you'd like to know?",
-        "Hi! How's your day going so far? What can I assist you with?",
-        "Greetings! How can I be of service?",
-        "Howdy! What's on your agenda today? How can I assist?",
-        "Hi there! I'm here to chat. Anything interesting happening?",
-        "Hey, what's cookin'? How can I make your day better?",
-        "Hello! Anything new and exciting happening in your world?",
-        "Hi! How can I brighten your day today?",
-        "Hello! Is there anything specific you'd like to talk about?",
-        "Hi there! I'm here to help. What's on your mind?",
-        "Hey, stranger! It's been a while. What brings you here today?",
-        "What's up? How can I assist you today?",
-        "Hi, can I help you with anything in particular?",
-        "Hello, is there anything you'd like to discuss today?",
-        "Hey, how's your day going? How can I assist you?",
-        "Hey there! It's always good to see you. What's on your plate today?",
-        "What's kickin'? How can I make your day awesome?",
-        "Hey! How's everything going? What can I do for you?",
-        "Hey there! I'm all ears. What's on your mind?",
-        "Hey, long time no see! What's new with you?",
-        "Hi, how are you doing today? What can I assist you with?"
+        "Sure, turning on the lights now.",
+        "Lights are coming on.",
+        "Lights activated."
       ]
     },
     {
-      "tag": "Goodbye",
+      "tag": "turn_off_lights",
       "patterns": [
-        "Goodbye",
-        "See you later",
-        "Bye",
-        "Take care",
-        "Catch you later",
-        "Until next time",
-        "Bye for now",
-        "Later"
+        "Turn off the lights",
+        "Switch off the lights",
+        "Darken the room"
       ],
       "responses": [
-        "Bye! Have a fantastic day!",
-        "See you later! Take care and stay awesome!",
-        "Bye for now! If you ever need assistance, I'll be here.",
-        "Farewell! Feel free to return anytime.",
-        "Goodbye! Don't hesitate to reach out if you have questions.",
-        "Catch you later! Have a wonderful day!",
-        "Until next time! Feel free to drop by whenever you like.",
-        "Bye for now! If there's anything you need in the future, just ask.",
-        "Later! If you ever want to chat, I'll be here."
+        "Of course, turning off the lights now.",
+        "Lights are going off.",
+        "Lights deactivated."
+      ]
+    },
+    {
+      "tag": "change_temperature",
+      "patterns": [
+        "Change the temperature",
+        "Adjust the thermostat",
+        "Set the room temperature"
+      ],
+      "responses": [
+        "Certainly, what temperature would you like to set?",
+        "Please specify the desired temperature."
+      ]
+    },
+    {
+      "tag": "search_spotify_song",
+      "patterns": [
+        "Search for a Spotify song",
+        "Find a track on Spotify",
+        "Play a song from Spotify"
+      ],
+      "responses": [
+        "Sure, please provide the name of the song or artist you're looking for."
+      ]
+    },
+    {
+      "tag": "play_spotify_song",
+      "patterns": [
+        "Play a Spotify song",
+        "Start playing music on Spotify",
+        "Play a track from Spotify"
+      ],
+      "responses": [
+        "Great choice! Playing your requested song now.",
+        "Now playing on Spotify."
+      ]
+    },
+    {
+      "tag": "pause_spotify_song",
+      "patterns": ["Pause Spotify", "Stop music on Spotify", "Pause the song"],
+      "responses": ["Pausing Spotify playback.", "Song paused."]
+    },
+    {
+      "tag": "get_ring_doorbell_status",
+      "patterns": [
+        "Check the Ring doorbell status",
+        "View the front door camera",
+        "Ring doorbell status"
+      ],
+      "responses": [
+        "Checking the Ring doorbell camera status. Please wait.",
+        "The Ring doorbell camera is online."
+      ]
+    },
+    {
+      "tag": "get_laundry_cycle_status",
+      "patterns": [
+        "Check the laundry cycle status",
+        "Laundry cycle update",
+        "Is the laundry done?"
+      ],
+      "responses": [
+        "Checking the laundry cycle status. Please wait.",
+        "The laundry cycle is still in progress.",
+        "The laundry is complete."
+      ]
+    },
+    {
+      "tag": "get_dryer_status",
+      "patterns": [
+        "Check the dryer status",
+        "Is the dryer running?",
+        "Dryer update"
+      ],
+      "responses": [
+        "Checking the dryer status. Please wait.",
+        "The dryer is currently running.",
+        "The dryer is not in use."
+      ]
+    },
+    {
+      "tag": "turn_on_tv",
+      "patterns": [
+        "Turn on the TV",
+        "Switch on the television",
+        "Start the TV"
+      ],
+      "responses": [
+        "Sure, turning on the TV now.",
+        "TV is powering up.",
+        "TV is ready to use."
+      ]
+    },
+    {
+      "tag": "turn_off_tv",
+      "patterns": [
+        "Turn off the TV",
+        "Switch off the television",
+        "Stop the TV"
+      ],
+      "responses": [
+        "Of course, turning off the TV now.",
+        "TV is powering down.",
+        "TV is off."
+      ]
+    },
+    {
+      "tag": "greet",
+      "patterns": [
+        "Hello",
+        "Hi",
+        "Hey",
+        "Good morning",
+        "Good afternoon",
+        "Good evening"
+      ],
+      "responses": ["Hello!", "Hi there!", "Hey!", "Greetings!", "Good day!"]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thank you", "Thanks", "Appreciate it", "Thanks a lot"],
+      "responses": [
+        "You're welcome!",
+        "You're very polite!",
+        "No problem!",
+        "Anytime!"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Goodbye", "Bye", "See you later", "Farewell"],
+      "responses": ["Goodbye!", "Take care!", "See you soon!", "Farewell!"]
+    },
+    {
+      "tag": "fallback",
+      "patterns": [
+        "I don't understand",
+        "Sorry, what?",
+        "Can you repeat that?"
+      ],
+      "responses": [
+        "I'm sorry, I couldn't understand your request. Please try again.",
+        "I didn't catch that. Could you please rephrase?"
       ]
     }
   ]
