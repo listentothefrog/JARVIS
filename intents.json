@@ -12,6 +12,16 @@
         "Time to get to work"
       ],
       "responses": ["Sure, starting focus session"]
+    },
+    {
+      "tag": "end_focus_session",
+      "patterns": [
+        "End my focus session",
+        "I am done with my work",
+        "I have completed my work",
+        "I have finished every thing on my todos"
+      ],
+      "responses": ["Great work! Ending focus session"]
     }
   ]
 }
