@@ -7,7 +7,7 @@ import json
 from nltk_utils import bag_of_words, tokenize
 from model import NeuralNet
 import random 
-from functions.focus import start_focus
+from functions.focus import start_focus, end_focus
 
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
@@ -72,6 +72,8 @@ async def on_message(message):
                 await message.channel.send(response)
             if tag == "start_focus_session": 
                 start_focus()
+            if tag == "end_focus_session": 
+                end_focus()
     else:
         await message.channel.send("I do not understand...")
 
