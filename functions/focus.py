@@ -15,10 +15,9 @@ def start_focus():
             if website in content: 
                 pass
             else: 
-                fileptr.write(redirect+"      "+website+"\n")
-    print("blocked all entertainment websites")            
+                fileptr.write(redirect+"      "+website+"\n")            
     webbrowser.open("https://www.notion.so/Assignments-Exams-0c3135345c6d4b6aabfc8a7150b55767")
-def end_focus(): 
+async def end_focus(user): 
     end = time.time()
     os.system("taskkill /im chrome.exe /f")
     with open(host_path, 'r+') as fileptr:
@@ -31,6 +30,5 @@ def end_focus():
             # removing hostnmes from host file
             fileptr.truncate()
     
-    print(f"the focus session lasted {format_timespan(end-start)}")
-    print("unblocked all entertainment websites")
+    await user.send(f"the focus session lasted {format_timespan(end-start)}")
     webbrowser.open("https://www.notion.so/Assignments-Exams-0c3135345c6d4b6aabfc8a7150b55767")
