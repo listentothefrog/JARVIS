@@ -15,7 +15,6 @@ def start_focus():
                 fileptr.write(redirect+"      "+website+"\n")
     print("blocked all entertainment websites")            
     webbrowser.open("https://www.notion.so/Assignments-Exams-0c3135345c6d4b6aabfc8a7150b55767")
-
 def end_focus(): 
     os.system("taskkill /im chrome.exe /f")
     with open(host_path, 'r+') as fileptr:
