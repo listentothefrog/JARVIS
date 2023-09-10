@@ -70,10 +70,12 @@ async def on_message(message):
             if tag == intent["tag"]:
                 response = random.choice(intent['responses'])
                 await message.channel.send(response)
-            if tag == "start_focus_session": 
-                start_focus()
-            if tag == "end_focus_session": 
-                end_focus()
+                if tag == "start_focus_session": 
+                    start_focus()
+                    await message.channel.send("blocked all entertainment websites")
+                if tag == "end_focus_session":
+                    await end_focus(message.author)
+                    await message.channel.send("unblocked all entertainment websites")
     else:
         await message.channel.send("I do not understand...")
 
