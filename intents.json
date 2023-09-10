@@ -11,7 +11,7 @@
         "I have something important todo",
         "Time to get to work"
       ],
-      "responses": ["Sure, starting focus session"]
+      "responses": ["Sure, starting a focus session"]
     },
     {
       "tag": "end_focus_session",
