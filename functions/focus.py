@@ -3,7 +3,7 @@ import webbrowser
 host_path = r"C:\Windows\System32\drivers\etc\hosts"
 redirect = "127.0.0.1"
 
-websites = ['www.youtube.com', "https://www.youtube.com"]
+websites = ['www.youtube.com', "https://www.youtube.com", "www.instagram.com", "https://www.instagram.com/", "www.tiktok.com", "https://tiktok.com"]
 def start_focus():
     os.system("taskkill /im chrome.exe /f")
     with open(host_path, "r+") as fileptr: 
