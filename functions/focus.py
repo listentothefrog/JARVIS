@@ -43,8 +43,8 @@ async def end_focus(user):
   
         # removing hostnames from the host file
         fileptr.truncate()
-    
-    await user.send(f"the focus session lasted {format_timespan(end-start)}")
+    duration = round(end - start)
+    await user.send(f"the focus session lasted {format_timespan(duration)}")
     
     subject = "Focus Session Completed 🚀"
     body = f"I'm excited to share that Shashank has successfully completed a productive focus session. The session lasted {format_timespan(end-start)}. It's my part of keeping him focused, please respond with 'Yes' or 'No' to approve the end of his session."
