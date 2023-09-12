@@ -64,7 +64,7 @@ async def end_focus(user):
     else: 
         await user.send("you haven't started a session")
     
-    ## subject = "Focus Session Completed 🚀"
+    subject = "Focus Session Completed 🚀"
     body = f"I'm excited to share that Shashank has successfully completed a productive focus session. The session lasted {format_timespan(end-start)}. It's my part of keeping him focused, please respond with 'Yes' or 'No' to approve the end of his session."
     
     em = EmailMessage()
