@@ -43,15 +43,11 @@ async def start_focus(user):
         await user.send("blocked all entertainment websites")
 
 async def end_focus(user): 
-    end = time.time()
     global in_session
-    if (round(end-start) < 30):
-        print(round(end-start)) 
-        print("less than 30")
-        
+    
     if in_session == True:
         in_session = False
-        
+        end = time.time()
         os.system("taskkill /im chrome.exe /f")
         with open(host_path, 'r+') as fileptr:
             content = fileptr.readlines()
@@ -60,11 +56,11 @@ async def end_focus(user):
                 if not any(website in line for website in websites):
                     fileptr.write(line)
   
-                # removing hostnames from the host file
+                 # removing hostnames from the host file
             fileptr.truncate()
         duration = round(end - start)
         await user.send(f"the focus session lasted {format_timespan(duration)}")
-       
+         
     else: 
         await user.send("you haven't started a session")
     
@@ -80,9 +76,9 @@ async def end_focus(user):
     context = ssl.create_default_context()
     
     with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
-        #smtp.login(email_sender, email_password)
-        #smtp.sendmail(email_sender, email_reciver, em.as_string())
+        smtp.login(email_sender, email_password)
+        smtp.sendmail(email_sender, email_reciver, em.as_string())
 
         await user.send("i have just sent an email to Mr. Ellareddy for the approval for the end of your focus session. You'll be notified as soon as i get a response.")
-
+    
     webbrowser.open("https://www.notion.so/Assignments-Exams-0c3135345c6d4b6aabfc8a7150b55767")
