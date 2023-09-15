@@ -22,6 +22,16 @@
         "I have finished every thing on my todos"
       ],
       "responses": ["Great work! Ending focus session"]
+    },
+    {
+      "tag": "play_song",
+      "patterns": [
+        "Play Pull up by Playboi carti",
+        "play flashing lights by kanye",
+        "Play Godzilla by Eminem",
+        "Butterfly effect by Travis Scott"
+      ],
+      "responses": ["Sure... Opening up spotify"]
     }
   ]
 }
