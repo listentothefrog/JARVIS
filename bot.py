@@ -75,6 +75,8 @@ async def on_message(message):
                 if tag == "end_focus_session":
                     await end_focus(message.author)
                     await message.channel.send("unblocked all entertainment websites")
+                if tag == "play_song": 
+                    print(message.content)
     else:
         await message.channel.send("I do not understand...")
 
