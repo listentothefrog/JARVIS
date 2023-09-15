@@ -8,7 +8,7 @@ from nltk_utils import bag_of_words, tokenize
 from model import NeuralNet
 import random 
 from functions.focus import start_focus, end_focus
-
+from functions.spotify_functions import play_song
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
 BOT_TOKEN = os.getenv('TOKEN')
@@ -76,7 +76,27 @@ async def on_message(message):
                     await end_focus(message.author)
                     await message.channel.send("unblocked all entertainment websites")
                 if tag == "play_song": 
-                    print(message.content)
+                    normal_text = message.content
+                    def extract_song_title(message_content):
+                    
+                         parts = message_content.split("play", 1)
+
+                   
+                         if len(parts) == 2:
+                            # Remove leading and trailing spaces from the song title
+                            song_title = parts[1].strip()
+                            song_title = song_title.replace("by", "").strip()
+                            return song_title
+                         else:
+                            return None
+
+                    user_message = normal_text
+                    song_title = extract_song_title(user_message)
+                    if song_title:
+                        play_song(song_title)
+                    else:
+                        print("No song title found in the message.")
+
     else:
         await message.channel.send("I do not understand...")
 
