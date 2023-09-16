@@ -8,7 +8,7 @@ from nltk_utils import bag_of_words, tokenize
 from model import NeuralNet
 import random 
 from functions.focus import start_focus, end_focus
-from functions.spotify_functions import play_song
+from functions.spotify_functions import play_song, pause_song
 from functions.extract_song_title import extract_song_title
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
@@ -85,7 +85,8 @@ async def on_message(message):
                         await play_song(song=song_title, user=message.author)
                     else:
                         await message.channel.send("No song title found in the message.")
-
+                if tag == "pause_song": 
+                    await pause_song()
     else:
         await message.channel.send("I do not understand...")
 
