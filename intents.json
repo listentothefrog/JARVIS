@@ -32,6 +32,17 @@
         "Butterfly effect by Travis Scott"
       ],
       "responses": ["Sure... Opening up spotify"]
+    },
+    {
+      "tag": "pause_song",
+      "patterns": [
+        "Pause the song",
+        "Stop the music",
+        "Pause the music",
+        "Pause track",
+        "Pause the current song"
+      ],
+      "responses": ["Pausing track"]
     }
   ]
 }
