@@ -30,8 +30,12 @@ async def play_song(song, user):
         await user.send(f"Playing {first_track['name']}")
         await user.send(first_track['external_urls']['spotify'])
         sp.start_playback(uris=track_uri, position_ms=0, device_id=device_id)
+            
     else:
         await user.send("No matching tracks found.")
         
 async def pause_song(): 
     await sp.pause_playback(device_id=device_id)
+    
+async def resume_song(): 
+    sp.start_playback()
