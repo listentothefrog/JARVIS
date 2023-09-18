@@ -43,6 +43,30 @@
         "Pause the current song"
       ],
       "responses": ["Pausing track"]
+    },
+    {
+      "tag": "resume_song",
+      "patterns": [
+        "Resume the song.",
+        "Continue playing the music.",
+        "Unpause the song.",
+        "Continue the track.",
+        "Start playing again.",
+        "Unpause the music.",
+        "Play that song from where it stopped.",
+        "Resume where I left off.",
+        "Continue the song.",
+        "Unpause the music.",
+        "Resume playback.",
+        "Continue the current song.",
+        "Keep the music going.",
+        "Don't stop the song.",
+        "Continue playing.",
+        "Start again from the pause.",
+        "Begin playback.",
+        "Resume the track."
+      ],
+      "responses": ["Resuming the song."]
     }
   ]
 }
