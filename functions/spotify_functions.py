@@ -1,7 +1,9 @@
 import os
+import pprint
 from dotenv import load_dotenv, find_dotenv
 import spotipy
 from spotipy import SpotifyOAuth
+from AppOpener import open
 
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
@@ -14,9 +16,12 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=CLIENT_ID,
                                                redirect_uri=REDIRECT_URI,
                                                scope='user-library-read, user-read-playback-state, user-modify-playback-state, user-read-currently-playing, app-remote-control, streaming'))
 
-devices = sp.devices()
-device_id = devices['devices'][0]['id']
-    
+try: 
+    devices = sp.devices()
+    device_id = devices['devices'][0]['id']
+except IndexError: 
+    open("Spotify")
+
 async def play_song(song, user): 
     results = sp.search(q=song, type="track")
     if len(results['tracks']['items']) > 0:
