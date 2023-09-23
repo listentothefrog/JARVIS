@@ -27,7 +27,8 @@ in_session = False
 
 async def start_focus(user):
     global in_session
-    await find_playlist()
+    playlistUri = "spotify:playlist:0vvXsWCC9xrXsKd4FyS8kM"
+    await find_playlist(playlistUri)
     if in_session == True: 
         await user.send("focus session is already started")
 
