@@ -79,8 +79,7 @@ async def end_focus(user):
     
     with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
         smtp.login(email_sender, email_password)
-        #smtp.sendmail(email_sender, email_reciver, em.as_string())
-
-        #await user.send("i have just sent an email to Mr. Ellareddy for the approval for the end of your focus session. You'll be notified as soon as i get a response.")
+        smtp.sendmail(email_sender, email_reciver, em.as_string())
+        await user.send("i have just sent an email to Mr. Ellareddy for the approval for the end of your focus session. You'll be notified as soon as i get a response.")
     
     webbrowser.open("https://www.notion.so/Assignments-Exams-0c3135345c6d4b6aabfc8a7150b55767")
