@@ -41,6 +41,5 @@ async def pause_song():
 async def resume_song(): 
     sp.start_playback()
 
-async def find_playlist():
-    playlistUri = "spotify:playlist:0vvXsWCC9xrXsKd4FyS8kM"
-    sp.start_playback(device_id=device_id, context_uri=playlistUri, position_ms=0)
+async def find_playlist(playlist):
+    sp.start_playback(device_id=device_id, context_uri=playlist, position_ms=0)
