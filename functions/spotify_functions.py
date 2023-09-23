@@ -1,3 +1,4 @@
+import json
 import os
 import pprint
 from dotenv import load_dotenv, find_dotenv
@@ -39,3 +40,7 @@ async def pause_song():
     
 async def resume_song(): 
     sp.start_playback()
+
+async def find_playlist():
+    playlistUri = "spotify:playlist:0vvXsWCC9xrXsKd4FyS8kM"
+    sp.start_playback(device_id=device_id, context_uri=playlistUri, position_ms=0)
