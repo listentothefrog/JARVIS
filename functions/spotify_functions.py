@@ -5,6 +5,7 @@ from dotenv import load_dotenv, find_dotenv
 import spotipy
 from spotipy import SpotifyOAuth
 from AppOpener import open
+import time
 
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
@@ -47,6 +48,8 @@ async def find_playlist(playlist):
 async def skip_track(user): 
     sp.next_track(device_id=device_id)
 
+    time.sleep(5)
+    
     current_song = sp.current_playback()
 
     if current_song is not None and "item" in current_song:
