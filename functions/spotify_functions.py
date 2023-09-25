@@ -48,7 +48,7 @@ async def find_playlist(playlist):
 async def skip_track(user): 
     sp.next_track(device_id=device_id)
 
-    time.sleep(5)
+    time.sleep(1)
     
     current_song = sp.current_playback()
 
