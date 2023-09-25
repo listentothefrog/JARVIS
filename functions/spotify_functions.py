@@ -4,7 +4,7 @@ import pprint
 from dotenv import load_dotenv, find_dotenv
 import spotipy
 from spotipy import SpotifyOAuth
-from AppOpener import open
+from AppOpener import open, close
 import time
 
 dotenv_path = find_dotenv()
@@ -40,8 +40,16 @@ async def play_song(song, user):
 async def pause_song(): 
     await sp.pause_playback(device_id=device_id)
     
-async def resume_song(): 
-    sp.start_playback()
+async def resume_song(user):
+    try:  
+        sp.start_playback()
+    except spotipy.exceptions.SpotifyException as e: 
+        if e.http_status == 404 and e.code == -1: 
+            await user.send("I encoutered an error while connecting with spotify")
+            close("Spotify")
+            open("Spotify")
+            sp.start_playback(device_id=device_id)
+    
 
 async def find_playlist(playlist):
     sp.start_playback(device_id=device_id, context_uri=playlist, position_ms=0)
