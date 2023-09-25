@@ -28,8 +28,9 @@ async def play_song(song, user):
     results = sp.search(q=song, type="track")
     if len(results['tracks']['items']) > 0:
         first_track = results['tracks']['items'][0]
+        artist = first_track['artists'][0]['name']
         track_uri = [first_track['uri']]
-        await user.send(f"Playing {first_track['name']}")
+        await user.send(f"Playing {first_track['name']} by {artist}")
         await user.send(first_track['external_urls']['spotify'])
         sp.start_playback(uris=track_uri, position_ms=0, device_id=device_id)
             
