@@ -43,3 +43,18 @@ async def resume_song():
 
 async def find_playlist(playlist):
     sp.start_playback(device_id=device_id, context_uri=playlist, position_ms=0)
+
+async def skip_track(user): 
+    sp.next_track(device_id=device_id)
+
+    current_song = sp.current_playback()
+
+    if current_song is not None and "item" in current_song:
+        track_name = current_song["item"]["name"]
+        track_url = current_song["item"]["external_urls"]["spotify"]
+        album_name = current_song["item"]["album"]["name"]
+        await user.send(f"Now playing: {track_name} on {album_name}")
+        await user.send(track_url)
+    else:
+        print("No track is currently playing.")
+    
