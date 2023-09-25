@@ -8,7 +8,7 @@ from nltk_utils import bag_of_words, tokenize
 from model import NeuralNet
 import random 
 from functions.focus import start_focus, end_focus
-from functions.spotify_functions import play_song, pause_song, resume_song, skip_track
+from functions.spotify_functions import play_song, pause_song, resume_song, skip_track, previous_track
 from functions.extract_song_title import extract_song_title
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
@@ -91,7 +91,9 @@ async def on_message(message):
                     await resume_song()
                 if tag == "skip_track": 
                     await skip_track(message.author)
-    else:
+                if tag == "previous_track":
+                    await previous_track()        
+    else:       
         await message.channel.send("I do not understand...")
 
 
