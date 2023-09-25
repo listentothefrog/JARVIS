@@ -31,7 +31,7 @@
         "Play Godzilla by Eminem",
         "Butterfly effect by Travis Scott"
       ],
-      "responses": ["Sure... Opening up spotify"]
+      "responses": ["Sure..."]
     },
     {
       "tag": "pause_song",
