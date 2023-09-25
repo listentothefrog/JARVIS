@@ -67,6 +67,26 @@
         "Resume the track."
       ],
       "responses": ["Resuming the song."]
+    },
+    {
+      "tag": "skip_track",
+      "patterns": [
+        "Skip this song",
+        "Next track",
+        "Move to the next song",
+        "Skip to the next track"
+      ],
+      "responses": ["Skipping current track..."]
+    },
+    {
+      "tag": "previous_track",
+      "patterns": [
+        "Play the previous track",
+        "Go back to the last song",
+        "Previous song",
+        "Previous track"
+      ],
+      "responses": ["Playing previous track..."]
     }
   ]
 }
