@@ -60,4 +60,6 @@ async def skip_track(user):
         await user.send(track_url)
     else:
         await user.send("No track is currently playing.")
-    
+
+async def previous_track(): 
+    sp.previous_track(device_id=device_id)
