@@ -88,7 +88,7 @@ async def on_message(message):
                 if tag == "pause_song": 
                     await pause_song()
                 if tag == "resume_song": 
-                    await resume_song()
+                    await resume_song(message.author)
                 if tag == "skip_track": 
                     await skip_track(message.author)
                 if tag == "previous_track":
