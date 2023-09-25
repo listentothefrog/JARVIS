@@ -59,5 +59,5 @@ async def skip_track(user):
         await user.send(f"Now playing: {track_name} on {album_name}")
         await user.send(track_url)
     else:
-        print("No track is currently playing.")
+        await user.send("No track is currently playing.")
     
