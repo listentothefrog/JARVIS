@@ -72,3 +72,12 @@ async def skip_track(user):
 
 async def previous_track(): 
     sp.previous_track(device_id=device_id)
+    
+async def get_current_track(user): 
+    current_track = sp.current_playback()
+    track_name = current_track["item"]["name"]
+    artist = current_track["item"]["artists"][0]["name"]
+    track_url = current_track["item"]["external_urls"]["spotify"]
+    await user.send(f"You are currently's listening to {track_name} by {artist}")
+    time.sleep(1)
+    await user.send(track_url)
