@@ -69,8 +69,6 @@ async def on_message(message):
     if prob.item() > 0.75:
         for intent in intents_data['intents']:
             if tag == intent["tag"]:
-                response = random.choice(intent['responses'])
-                await message.channel.send(response)
                 if tag == "start_focus_session": 
                     await start_focus(message.author)
                 if tag == "end_focus_session":
