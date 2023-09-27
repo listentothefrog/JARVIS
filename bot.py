@@ -84,7 +84,7 @@ async def on_message(message):
                     else:
                         await message.channel.send("No song title found in the message.")
                 if tag == "pause_song": 
-                    await pause_song()
+                    await pause_song(message.author)
                 if tag == "resume_song": 
                     await resume_song(message.author)
                 if tag == "skip_track": 
