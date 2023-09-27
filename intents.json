@@ -10,8 +10,7 @@
         "I have a lot of work",
         "I have something important todo",
         "Time to get to work"
-      ],
-      "responses": ["Sure, starting a focus session"]
+      ]
     },
     {
       "tag": "end_focus_session",
@@ -20,8 +19,7 @@
         "I am done with my work",
         "I have completed my work",
         "I have finished every thing on my todos"
-      ],
-      "responses": ["Great work! Ending focus session"]
+      ]
     },
     {
       "tag": "play_song",
@@ -30,8 +28,7 @@
         "play flashing lights by kanye",
         "Play Godzilla by Eminem",
         "Butterfly effect by Travis Scott"
-      ],
-      "responses": ["Sure..."]
+      ]
     },
     {
       "tag": "pause_song",
@@ -41,8 +38,7 @@
         "Pause the music",
         "Pause track",
         "Pause the current song"
-      ],
-      "responses": ["Pausing track"]
+      ]
     },
     {
       "tag": "resume_song",
@@ -65,8 +61,7 @@
         "Start again from the pause.",
         "Begin playback.",
         "Resume the track."
-      ],
-      "responses": ["Resuming the song."]
+      ]
     },
     {
       "tag": "skip_track",
@@ -75,8 +70,7 @@
         "Next track",
         "Move to the next song",
         "Skip to the next track"
-      ],
-      "responses": ["Skipping current track..."]
+      ]
     },
     {
       "tag": "previous_track",
@@ -85,8 +79,7 @@
         "Go back to the last song",
         "Previous song",
         "Previous track"
-      ],
-      "responses": ["Playing previous track..."]
+      ]
     },
     {
       "tag": "get_current_song",
@@ -97,8 +90,7 @@
         "Who's the artist of the current track?",
         "Give me details about the song playing",
         "What's currently playing in Spotify?"
-      ],
-      "responses": ["Sure"]
+      ]
     }
   ]
 }
