@@ -76,8 +76,10 @@ async def previous_track():
 async def get_current_track(user): 
     current_track = sp.current_playback()
     track_name = current_track["item"]["name"]
-    artist = current_track["item"]["artists"][0]["name"]
+    artist_data = current_track["item"]["artists"]
+    artist_names = [artist['name'] for artist in artist_data]
+    artist_names_formatted = ', '.join(artist_names)
     track_url = current_track["item"]["external_urls"]["spotify"]
-    await user.send(f"You are currently's listening to {track_name} by {artist}")
+    await user.send(f"You are currently's listening to {track_name} by {artist_names_formatted}")
     time.sleep(1)
     await user.send(track_url)
