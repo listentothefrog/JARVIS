@@ -81,5 +81,4 @@ async def get_current_track(user):
     artist_names_formatted = ', '.join(artist_names)
     track_url = current_track["item"]["external_urls"]["spotify"]
     await user.send(f"You are currently's listening to {track_name} by {artist_names_formatted}")
-    time.sleep(1)
     await user.send(track_url)
