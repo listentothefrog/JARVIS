@@ -37,11 +37,13 @@ async def play_song(song, user):
     else:
         await user.send("No matching tracks found.")
         
-async def pause_song(): 
+async def pause_song(user):
+    await user.send("Pausing track...") 
     await sp.pause_playback(device_id=device_id)
     
 async def resume_song(user):
     try:  
+        await user.send("Resuming song...")
         sp.start_playback()
     except spotipy.exceptions.SpotifyException as e: 
         if e.http_status == 404 and e.code == -1: 
