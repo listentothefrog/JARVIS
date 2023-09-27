@@ -87,6 +87,18 @@
         "Previous track"
       ],
       "responses": ["Playing previous track..."]
+    },
+    {
+      "tag": "get_current_song",
+      "patterns": [
+        "What's the current song?",
+        "Tell me the song playing right now",
+        "What song is currently on?",
+        "Who's the artist of the current track?",
+        "Give me details about the song playing",
+        "What's currently playing in Spotify?"
+      ],
+      "responses": ["Sure"]
     }
   ]
 }
