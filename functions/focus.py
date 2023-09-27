@@ -49,7 +49,7 @@ async def start_focus(user):
 async def end_focus(user): 
     global in_session
     if in_session == True:
-        user.send("Ending focus sesssion...")
+        user.send("Ending focus session...")
         in_session = False
         end = time.time()
         os.system("taskkill /im chrome.exe /f")
