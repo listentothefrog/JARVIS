@@ -90,7 +90,7 @@ async def on_message(message):
                 if tag == "skip_track": 
                     await skip_track(message.author)
                 if tag == "previous_track":
-                    await previous_track()  
+                    await previous_track(message.author)  
                 if tag == "get_current_song": 
                     await get_current_track(message.author)      
     else:       
