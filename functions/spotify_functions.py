@@ -54,7 +54,7 @@ async def resume_song(user):
     
 
 async def find_playlist(playlist):
-    sp.start_playback(device_id=device_id, context_uri=playlist, position_ms=0)
+    await sp.start_playback(device_id=device_id, context_uri=playlist, position_ms=0)
 
 async def skip_track(user): 
     sp.next_track(device_id=device_id)
