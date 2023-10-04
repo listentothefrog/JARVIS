@@ -6,7 +6,6 @@ import torch
 import json
 from nltk_utils import bag_of_words, tokenize
 from model import NeuralNet
-import random 
 from functions.focus import start_focus, end_focus
 from functions.spotify_functions import play_song, pause_song, resume_song, skip_track, previous_track, get_current_track
 from functions.extract_song_title import extract_song_title
