@@ -9,3 +9,15 @@
 # 7:00 PM - 8:30 PM Start gym functions 
 # 9:00 PM - 9:45 PM Start focus session function
 # 9:46 PM Start bed time wrapup, turns off internet.
+
+import schedule
+import time
+
+
+def task(): 
+    print("Doing task...")
+
+schedule.every(2).seconds.do(task)
+while True: 
+    schedule.run_pending()
+    time.sleep(1)
