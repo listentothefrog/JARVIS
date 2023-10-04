@@ -14,10 +14,28 @@ import schedule
 import time
 
 
-def task(): 
-    print("Doing task...")
+def wake_up(): 
+    print("wake up function goes here") 
+def start_focus_session(): 
+    print("start focus")
 
-schedule.every(2).seconds.do(task)
+def end_focus_session(): 
+    print("end focus session")
+    
+def send_updates_from_calendar():
+    print("send updates from calendars")
+
+def break_function(): 
+    print("start break") 
+    
+def start_gym_focus(): 
+    print("start gym focus")
+
+def bed_time_wrapup(): 
+    print("start bed time wrapup functions") 
+    
+
+# schedule.every(2).seconds.do(task)
 while True: 
     schedule.run_pending()
     time.sleep(1)
