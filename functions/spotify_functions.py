@@ -25,18 +25,30 @@ except IndexError:
     open("Spotify")
 
 async def play_song(song, user): 
-    results = sp.search(q=song, type="track")
-    if len(results['tracks']['items']) > 0:
-        first_track = results['tracks']['items'][0]
-        artist = first_track['artists'][0]['name']
-        track_uri = [first_track['uri']]
-        await user.send(f"Playing {first_track['name']} by {artist}")
-        await user.send(first_track['external_urls']['spotify'])
-        sp.start_playback(uris=track_uri, position_ms=0, device_id=device_id)
-            
-    else:
-        await user.send("No matching tracks found.")
+    try: 
         
+        results = sp.search(q=song, type="track")
+        if len(results['tracks']['items']) > 0:
+            first_track = results['tracks']['items'][0]
+            artist = first_track['artists'][0]['name']
+            track_uri = [first_track['uri']]
+            await user.send(f"Playing {first_track['name']} by {artist}")
+            await user.send(first_track['external_urls']['spotify'])
+            sp.start_playback(uris=track_uri, position_ms=0, device_id=device_id)
+            
+        else:
+            await user.send("No matching tracks found.")
+    except ConnectionError: 
+        await user.send("Couldn't connect with spotify")
+        close("Spotify")
+        open("Spotify")
+        sp.start_playback(uris=track_uri, position_ms=0, device_id=device_id)    
+    except NameError: 
+        await user.send("Cannot your device id")
+        close("Spotify")
+        open("Spotify")
+        sp.start_playback(uris=track_uri, position_ms=0, device_id=device_id)
+
 async def pause_song(user):
     await user.send("Pausing track...") 
     await sp.pause_playback(device_id=device_id)
