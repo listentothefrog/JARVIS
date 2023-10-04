@@ -10,9 +10,6 @@
 # 9:00 PM - 9:45 PM Start focus session function
 # 9:46 PM Start bed time wrapup, turns off internet.
 
-import schedule
-import time
-
 def wake_up(): 
     print("wake up function goes here") 
 def start_focus_session(): 
@@ -33,19 +30,3 @@ def start_gym_focus():
 def bed_time_wrapup(): 
     print("start bed time wrapup functions") 
     
-schedule.every().day.at("05:46").do(wake_up)
-schedule.every().day.at("05:48").do(start_focus_session)
-schedule.every().day.at("06:30").do(end_focus_session)
-schedule.every().day.at("16:00").do(send_updates_from_calendar)
-schedule.every().day.at("17:00").do(break_function)
-schedule.every().day.at("17:05").do(start_focus_session)
-schedule.every().day.at("17:40").do(break_function)
-schedule.every().day.at("17:50").do(start_focus_session)
-schedule.every().day.at("19:00").do(start_gym_focus)
-schedule.every().day.at("19:45").do(start_focus_session)
-schedule.every().day.at("22:00").do(end_focus_session)
-schedule.every().day.at("22:10").do(bed_time_wrapup) 
-
-while True:
-    schedule.run_pending()
-    time.sleep(10)
