@@ -44,7 +44,7 @@ async def play_song(song, user):
         open("Spotify")
         sp.start_playback(uris=track_uri, position_ms=0, device_id=device_id)    
     except NameError: 
-        await user.send("Cannot your device id")
+        await user.send("Cannot find your device id")
         close("Spotify")
         open("Spotify")
         sp.start_playback(uris=track_uri, position_ms=0, device_id=device_id)
