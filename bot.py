@@ -51,18 +51,18 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    schedule.every().day.at("05:46").do(wake_up)
-    schedule.every().day.at("05:48").do(start_focus_session)
-    schedule.every().day.at("06:30").do(end_focus_session)
-    schedule.every().day.at("16:00").do(send_updates_from_calendar)
-    schedule.every().day.at("17:00").do(break_function)
-    schedule.every().day.at("17:05").do(start_focus_session)
-    schedule.every().day.at("17:40").do(break_function)
-    schedule.every().day.at("17:50").do(start_focus_session)
-    schedule.every().day.at("19:00").do(start_gym_focus)
-    schedule.every().day.at("19:45").do(start_focus_session)
-    schedule.every().day.at("22:00").do(end_focus_session)
-    schedule.every().day.at("22:10").do(bed_time_wrapup) 
+    #schedule.every().day.at("05:46").do(wake_up)
+    #schedule.every().day.at("05:48").do(start_focus_session)
+    #schedule.every().day.at("06:30").do(end_focus_session)
+    #schedule.every().day.at("16:00").do(send_updates_from_calendar)
+    #schedule.every().day.at("17:00").do(break_function)
+    #schedule.every().day.at("17:05").do(start_focus_session)
+    #schedule.every().day.at("17:40").do(break_function)
+    #schedule.every().day.at("17:50").do(start_focus_session)
+    #schedule.every().day.at("19:00").do(start_gym_focus)
+    #schedule.every().day.at("19:45").do(start_focus_session)
+    #schedule.every().day.at("22:00").do(end_focus_session)
+    #schedule.every().day.at("22:10").do(bed_time_wrapup) 
 
 
     
@@ -113,9 +113,9 @@ async def on_message(message):
     else:       
         await message.channel.send("I do not understand...")
 
-    while True:
-        schedule.run_pending()
-        time.sleep(10) 
+    #while True:
+        #schedule.run_pending()
+        #time.sleep(1) 
         
 
 bot.run(BOT_TOKEN)
