@@ -9,7 +9,6 @@ from model import NeuralNet
 from functions.focus import start_focus, end_focus
 from functions.spotify_functions import play_song, pause_song, resume_song, skip_track, previous_track, get_current_track
 from functions.extract_song_title import extract_song_title
-from functions.schedulers import wake_up, start_focus_session, end_focus_session, break_function, start_gym_focus, send_updates_from_calendar, bed_time_wrapup
 
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
