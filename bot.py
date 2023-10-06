@@ -10,8 +10,7 @@ from functions.focus import start_focus, end_focus
 from functions.spotify_functions import play_song, pause_song, resume_song, skip_track, previous_track, get_current_track
 from functions.extract_song_title import extract_song_title
 from functions.schedulers import wake_up, start_focus_session, end_focus_session, break_function, start_gym_focus, send_updates_from_calendar, bed_time_wrapup
-import schedule 
-import time
+
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
 BOT_TOKEN = os.getenv('TOKEN')
@@ -50,22 +49,7 @@ async def on_ready():
     print(f'We have logged in as {bot.user.display_name}')
 
 @bot.event
-async def on_message(message):
-    #schedule.every().day.at("05:46").do(wake_up)
-    #schedule.every().day.at("05:48").do(start_focus_session)
-    #schedule.every().day.at("06:30").do(end_focus_session)
-    #schedule.every().day.at("16:00").do(send_updates_from_calendar)
-    #schedule.every().day.at("17:00").do(break_function)
-    #schedule.every().day.at("17:05").do(start_focus_session)
-    #schedule.every().day.at("17:40").do(break_function)
-    #schedule.every().day.at("17:50").do(start_focus_session)
-    #schedule.every().day.at("19:00").do(start_gym_focus)
-    #schedule.every().day.at("19:45").do(start_focus_session)
-    #schedule.every().day.at("22:00").do(end_focus_session)
-    #schedule.every().day.at("22:10").do(bed_time_wrapup) 
-
-
-    
+async def on_message(message):    
     if message.author == bot.user:
         return
 
@@ -112,10 +96,6 @@ async def on_message(message):
                     await get_current_track(message.author)      
     else:       
         await message.channel.send("I do not understand...")
-
-    #while True:
-        #schedule.run_pending()
-        #time.sleep(1) 
         
 
 bot.run(BOT_TOKEN)
