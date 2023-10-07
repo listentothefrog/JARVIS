@@ -1,5 +1,4 @@
 # Todos
-# 5:46 AM Wake up computer 
 # 5:48 AM Start focus session 
 # 6:30 AM End focus session, turn off computer, shower process 
 # 4:00 PM Start computer, start focus session, homework process
@@ -10,23 +9,12 @@
 # 9:00 PM - 9:45 PM Start focus session function
 # 9:46 PM Start bed time wrapup, turns off internet.
 
-def wake_up(): 
-    print("wake up function goes here") 
-def start_focus_session(): 
-    print("start focus")
+import discord
+from discord.ext import commands, tasks
+import os
+import time
+from dotenv import find_dotenv, load_dotenv
+dotenv_path = find_dotenv()
+load_dotenv(dotenv_path)
+BOT_TOKEN = os.getenv('TOKEN')
 
-def end_focus_session(): 
-    print("end focus session")
-    
-def send_updates_from_calendar():
-    print("send updates from calendars")
-
-def break_function(): 
-    print("start break") 
-    
-def start_gym_focus(): 
-    print("start gym focus")
-
-def bed_time_wrapup(): 
-    print("start bed time wrapup functions") 
-    
