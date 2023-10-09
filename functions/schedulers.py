@@ -17,4 +17,15 @@ from dotenv import find_dotenv, load_dotenv
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
 BOT_TOKEN = os.getenv('TOKEN')
+from datetime import datetime
 
+
+
+while True:
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+
+    if current_time == "20:44:00":
+        print("Hello, World!")
+
+    time.sleep(1) 
