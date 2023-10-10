@@ -45,7 +45,7 @@ async def on_message(message):
     if message.content.startswith("$ping"): 
         await message.channel.send("hello world!")
         
-    schedule.every().day.at("05:46").do(start_focus, message.author)
+    schedule.every().day.at("05:46").do(print_function)
     schedule.every().day.at("06:30").do(print_function)
     schedule.every().day.at("16:00").do(print_function)
     schedule.every().day.at("17:00").do(print_function)
