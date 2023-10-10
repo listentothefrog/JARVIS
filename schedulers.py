@@ -14,13 +14,13 @@ from discord.ext import commands, tasks
 import os
 import time
 from dotenv import find_dotenv, load_dotenv
-from focus import start_focus
-
+from functions.focus import start_focus
+import schedule
+from datetime import datetime
 
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
 BOT_TOKEN = os.getenv('TOKEN')
-from datetime import datetime
 
 intents = discord.Intents.default()
 intents.typing = False
@@ -28,17 +28,22 @@ intents.presences = False
 
 bot = commands.Bot(command_prefix='$', intents=intents)
 
-@bot.event
-async def on_ready():
-    print(f'We have logged in as {bot.user.display_name}')
+def print_function(): 
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    print(f"run, ran at -> {current_time}")
+    
+schedule.every().day.at("05:48").do(print_function)
+schedule.every().day.at("06:30").do(print_function)
+schedule.every().day.at("16:00").do(print_function)
+schedule.every().day.at("17:00").do(print_function)
+schedule.every().day.at("17:30").do(print_function)
+schedule.every().day.at("17:40").do(print_function)
+schedule.every().day.at("19:00").do(print_function)
+schedule.every().day.at("21:00").do(print_function)
+schedule.every().day.at("21:46").do(print_function)
 
-@bot.event
-async def on_message(message):
-    while True:
-        now = datetime.now()
-        current_time = now.strftime("%H:%M:%S")
 
-        if current_time == "05:48:00":
-            start_focus(message.authour)
-
-        time.sleep(1) 
+while True: 
+    schedule.run_pending()
+    time.sleep(1)
