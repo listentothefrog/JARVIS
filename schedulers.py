@@ -20,7 +20,7 @@ from datetime import datetime
 
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
-BOT_TOKEN = os.getenv('TOKEN')
+BOT_TOKEN = os.getenv('DUMMY_TOKEN')
 
 intents = discord.Intents.default()
 intents.typing = False
@@ -31,19 +31,33 @@ bot = commands.Bot(command_prefix='$', intents=intents)
 def print_function(): 
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    print(f"i runned at, ran at -> {current_time}")
+    print(f"i runned, ran at -> {current_time}")
     
-schedule.every().day.at("05:48").do(print_function)
-schedule.every().day.at("06:30").do(print_function)
-schedule.every().day.at("16:00").do(print_function)
-schedule.every().day.at("17:00").do(print_function)
-schedule.every().day.at("17:30").do(print_function)
-schedule.every().day.at("17:40").do(print_function)
-schedule.every().day.at("19:00").do(print_function)
-schedule.every().day.at("21:00").do(print_function)
-schedule.every().day.at("21:46").do(print_function)
 
+@bot.event
+async def on_ready():
+    print(f'We have logged in as {bot.user.display_name}')
+    
+@bot.event
+async def on_message(message): 
+    if message.author == bot.user:
+        return
+    if message.content.startswith("$ping"): 
+        await message.channel.send("hello world!")
+        
+    schedule.every().day.at("05:46").do(start_focus, message.author)
+    schedule.every().day.at("06:30").do(print_function)
+    schedule.every().day.at("16:00").do(print_function)
+    schedule.every().day.at("17:00").do(print_function)
+    schedule.every().day.at("17:30").do(print_function)
+    schedule.every().day.at("17:40").do(print_function)
+    schedule.every().day.at("19:00").do(print_function)
+    schedule.every().day.at("21:00").do(print_function)
+    schedule.every().day.at("21:46").do(print_function)
+
+bot.run(BOT_TOKEN)
 
 while True: 
     schedule.run_pending()
-    time.sleep(1)
+    time.sleep(1)  
+    
