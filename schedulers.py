@@ -31,7 +31,7 @@ bot = commands.Bot(command_prefix='$', intents=intents)
 def print_function(): 
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    print(f"run, ran at -> {current_time}")
+    print(f"i runned at, ran at -> {current_time}")
     
 schedule.every().day.at("05:48").do(print_function)
 schedule.every().day.at("06:30").do(print_function)
