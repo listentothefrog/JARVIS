@@ -18,7 +18,7 @@ from functions.focus import start_focus
 import schedule
 from datetime import datetime
 
-dotenv_path = find_dotenv()
+dotenv_path =  find_dotenv()
 load_dotenv(dotenv_path)
 BOT_TOKEN = os.getenv('DUMMY_TOKEN')
 
@@ -26,14 +26,25 @@ intents = discord.Intents.default()
 intents.typing = False
 intents.presences = False
 
-bot = commands.Bot(command_prefix='$', intents=intents)
-
 def print_function(): 
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     print(f"i runned, ran at -> {current_time}")
     
 
+def schedule_functon(): 
+    schedule.every().day.at("05:46").do(print_function)
+    schedule.every().day.at("06:30").do(print_function)
+    schedule.every().day.at("16:00").do(print_function)
+    schedule.every().day.at("17:00").do(print_function)
+    schedule.every().day.at("17:30").do(print_function)
+    schedule.every().day.at("17:40").do(print_function)
+    schedule.every().day.at("19:00").do(print_function)
+    schedule.every().day.at("21:00").do(print_function)
+    schedule.every().day.at("22:23").do(print_function)
+
+bot = commands.Bot(command_prefix='$', intents=intents)
+    
 @bot.event
 async def on_ready():
     print(f'We have logged in as {bot.user.display_name}')
@@ -44,20 +55,10 @@ async def on_message(message):
         return
     if message.content.startswith("$ping"): 
         await message.channel.send("hello world!")
+        print("running these functions")
+        while True: 
+            schedule_functon()
+            schedule.run_pending()
+            time.sleep(10)  
         
-    schedule.every().day.at("05:46").do(print_function)
-    schedule.every().day.at("06:30").do(print_function)
-    schedule.every().day.at("16:00").do(print_function)
-    schedule.every().day.at("17:00").do(print_function)
-    schedule.every().day.at("17:30").do(print_function)
-    schedule.every().day.at("17:40").do(print_function)
-    schedule.every().day.at("19:00").do(print_function)
-    schedule.every().day.at("21:00").do(print_function)
-    schedule.every().day.at("21:46").do(print_function)
-
 bot.run(BOT_TOKEN)
-
-while True: 
-    schedule.run_pending()
-    time.sleep(1)  
-    
