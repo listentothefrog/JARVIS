@@ -10,11 +10,10 @@
 # 9:46 PM Start bed time wrapup, turns off internet.
 
 import discord
-from discord.ext import commands, tasks
+from discord.ext import commands
 import os
 import time
 from dotenv import find_dotenv, load_dotenv
-from functions.focus import start_focus
 import schedule
 from datetime import datetime
 
