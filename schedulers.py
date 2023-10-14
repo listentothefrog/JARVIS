@@ -10,14 +10,13 @@
 # 9:46 PM Start bed time wrapup, turns off internet.
 
 import discord
-from discord.ext import commands
+from discord.ext import commands, tasks
 import os
-import time
+import asyncio
 from dotenv import find_dotenv, load_dotenv
-import schedule
 from datetime import datetime
 
-dotenv_path =  find_dotenv()
+dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
 BOT_TOKEN = os.getenv('DUMMY_TOKEN')
 
@@ -25,39 +24,24 @@ intents = discord.Intents.default()
 intents.typing = False
 intents.presences = False
 
-def print_function(): 
-    now = datetime.now()
-    current_time = now.strftime("%H:%M:%S")
-    print(f"i runned, ran at -> {current_time}")
-    
+bot = commands.Bot(command_prefix='!', intents=intents)
 
-def schedule_functon(): 
-    schedule.every().day.at("05:46").do(print_function)
-    schedule.every().day.at("06:30").do(print_function)
-    schedule.every().day.at("16:00").do(print_function)
-    schedule.every().day.at("17:00").do(print_function)
-    schedule.every().day.at("17:30").do(print_function)
-    schedule.every().day.at("17:40").do(print_function)
-    schedule.every().day.at("19:00").do(print_function)
-    schedule.every().day.at("21:00").do(print_function)
-    schedule.every().day.at("22:23").do(print_function)
+async def send_dm_when_time_reached():
+    await bot.wait_until_ready()  # Wait for the bot to be ready
 
-bot = commands.Bot(command_prefix='$', intents=intents)
-    
+    while not bot.is_closed():
+        current_time = datetime.now()
+        if current_time.hour == 17 and current_time.minute == 46:
+            channel = bot.get_channel(1148273955728281683)
+            if channel:
+                await channel.send("Hello, World!")  
+            else:
+                print("Channel not found.")
+            await asyncio.sleep(60)  
+
 @bot.event
 async def on_ready():
     print(f'We have logged in as {bot.user.display_name}')
-    
-@bot.event
-async def on_message(message): 
-    if message.author == bot.user:
-        return
-    if message.content.startswith("$ping"): 
-        await message.channel.send("hello world!")
-        print("running these functions")
-        while True: 
-            schedule_functon()
-            schedule.run_pending()
-            time.sleep(10)  
-        
+    bot.loop.create_task(send_dm_when_time_reached()) 
+
 bot.run(BOT_TOKEN)
