@@ -15,6 +15,7 @@ import os
 import asyncio
 from dotenv import find_dotenv, load_dotenv
 from datetime import datetime
+from functions.focus import start_focus
 
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
@@ -31,10 +32,11 @@ async def send_dm_when_time_reached():
 
     while not bot.is_closed():
         current_time = datetime.now()
-        if current_time.hour == 17 and current_time.minute == 46:
+        if current_time.hour == 18 and current_time.minute == 9:
             channel = bot.get_channel(1148273955728281683)
             if channel:
-                await channel.send("Hello, World!")  
+                await channel.send("Good Morning, Shashank. Starting a focus session ☀️")
+                await start_focus(user="tren_brahh")  
             else:
                 print("Channel not found.")
             await asyncio.sleep(60)  
