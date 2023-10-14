@@ -73,8 +73,10 @@ async def on_message(message):
         for intent in intents_data['intents']:
             if tag == intent["tag"]:
                 if tag == "start_focus_session": 
+                    await message.channel.send("Sure...Starting a focus session")
                     await start_focus(message.author)
                 if tag == "end_focus_session":
+                    await message.channel.send("Ending focus session...")
                     await end_focus(message.author)
                     await message.channel.send("unblocked all entertainment websites")
                 if tag == "play_song": 
