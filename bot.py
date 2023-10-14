@@ -51,6 +51,9 @@ async def on_ready():
 async def on_message(message):    
     if message.author == bot.user:
         return
+    
+    if message.author.name == "Dummy": 
+        return
 
     user_message = message.content
     sentence = tokenize(user_message)
