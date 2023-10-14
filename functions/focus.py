@@ -33,7 +33,6 @@ async def start_focus(user):
         await user.send("focus session is already started")
 
     else:
-        await user.send("Sure starting a focus session...")
         in_session = True 
         os.system("taskkill /im chrome.exe /f")
         with open(host_path, "r+") as fileptr: 
@@ -49,7 +48,6 @@ async def start_focus(user):
 async def end_focus(user): 
     global in_session
     if in_session == True:
-        user.send("Ending focus session...")
         in_session = False
         end = time.time()
         os.system("taskkill /im chrome.exe /f")
