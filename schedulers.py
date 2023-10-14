@@ -10,7 +10,7 @@
 # 9:46 PM Start bed time wrapup, turns off internet.
 
 import discord
-from discord.ext import commands, tasks
+from discord.ext import commands
 import os
 import asyncio
 from dotenv import find_dotenv, load_dotenv
@@ -27,7 +27,7 @@ intents.presences = False
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 async def send_dm_when_time_reached():
-    await bot.wait_until_ready()  # Wait for the bot to be ready
+    await bot.wait_until_ready()
 
     while not bot.is_closed():
         current_time = datetime.now()
