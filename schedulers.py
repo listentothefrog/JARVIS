@@ -15,7 +15,7 @@ import os
 import asyncio
 from dotenv import find_dotenv, load_dotenv
 from datetime import datetime
-from functions.focus import start_focus
+from functions.focus import start_focus, end_focus
 
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
@@ -32,7 +32,8 @@ async def send_dm_when_time_reached():
 
     while not bot.is_closed():
         current_time = datetime.now()
-        if current_time.hour == 18 and current_time.minute == 9:
+        
+        if current_time.hour == 5 and current_time.minute == 46:
             channel = bot.get_channel(1148273955728281683)
             if channel:
                 await channel.send("Good Morning, Shashank. Starting a focus session ☀️")
@@ -41,6 +42,78 @@ async def send_dm_when_time_reached():
                 print("Channel not found.")
             await asyncio.sleep(60)  
 
+        if current_time.hour == 6 and current_time.minute == 46: 
+            channel = bot.get_channel(1148273955728281683)
+            if channel:
+                await channel.send("Ending focus session")
+                await end_focus(user="tren_brahh")  
+            else:
+                print("Channel not found.")
+            await asyncio.sleep(60)
+        
+        if current_time.hour == 16 and current_time.minute == 00: 
+            channel = bot.get_channel(1148273955728281683)
+            if channel:
+                await channel.send("Ending focus session")
+                await end_focus(user="tren_brahh")  
+            else:
+                print("Channel not found.")
+            await asyncio.sleep(60)
+            
+        if current_time.hour == 17 and current_time.minute == 00: 
+            channel = bot.get_channel(1148273955728281683)
+            if channel:
+                await channel.send("Ending focus session")
+                await end_focus(user="tren_brahh")  
+            else:
+                print("Channel not found.")
+            await asyncio.sleep(60)
+            
+        if current_time.hour == 17 and current_time.minute == 30: 
+            channel = bot.get_channel(1148273955728281683)
+            if channel:
+                await channel.send("Ending focus session")
+                await end_focus(user="tren_brahh")  
+            else:
+                print("Channel not found.")
+            await asyncio.sleep(60)
+            
+        if current_time.hour == 17 and current_time.minute == 40: 
+            channel = bot.get_channel(1148273955728281683)
+            if channel:
+                await channel.send("Ending focus session")
+                await end_focus(user="tren_brahh")  
+            else:
+                print("Channel not found.")
+            await asyncio.sleep(60)
+            
+        if current_time.hour == 19 and current_time.minute == 00: 
+            channel = bot.get_channel(1148273955728281683)
+            if channel:
+                await channel.send("Ending focus session")
+                await end_focus(user="tren_brahh")  
+            else:
+                print("Channel not found.")
+            await asyncio.sleep(60)
+            
+        if current_time.hour == 21 and current_time.minute == 00: 
+            channel = bot.get_channel(1148273955728281683)
+            if channel:
+                await channel.send("Ending focus session")
+                await end_focus(user="tren_brahh")  
+            else:
+                print("Channel not found.")
+            await asyncio.sleep(60)
+            
+        if current_time.hour == 21 and current_time.minute == 46: 
+            channel = bot.get_channel(1148273955728281683)
+            if channel:
+                await channel.send("Ending focus session")
+                await end_focus(user="tren_brahh")  
+            else:
+                print("Channel not found.")
+            await asyncio.sleep(60)
+        
 @bot.event
 async def on_ready():
     print(f'We have logged in as {bot.user.display_name}')
