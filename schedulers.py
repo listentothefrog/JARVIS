@@ -107,7 +107,7 @@ async def send_dm_when_time_reached():
                 print("Channel not found.")
             await asyncio.sleep(60)
             
-        if current_time.hour >= 22 and current_time.minute >= 13: 
+        if current_time.hour >= 21 and current_time.minute >= 46: 
             channel = bot.get_channel(1148273955728281683)
             if channel:
                 await channel.send("It's bed time, About to put your PC to sleep. See you in the morning, have a good night 🌙")
