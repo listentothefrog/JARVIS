@@ -16,6 +16,8 @@ import asyncio
 from dotenv import find_dotenv, load_dotenv
 from datetime import datetime
 from functions.focus import start_focus, end_focus
+import time
+from functions.put_computer_to_sleep import put_computer_to_sleep
 
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
@@ -105,11 +107,12 @@ async def send_dm_when_time_reached():
                 print("Channel not found.")
             await asyncio.sleep(60)
             
-        if current_time.hour == 21 and current_time.minute == 46: 
+        if current_time.hour == 22 and current_time.minute == 13: 
             channel = bot.get_channel(1148273955728281683)
             if channel:
-                await channel.send("Ending focus session")
-                await end_focus(user="tren_brahh")  
+                await channel.send("It's bed time, About to put your PC to sleep. See you in the morning, have a good night 🌙")
+                time.sleep(60)
+                put_computer_to_sleep()
             else:
                 print("Channel not found.")
             await asyncio.sleep(60)
