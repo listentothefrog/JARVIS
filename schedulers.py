@@ -42,7 +42,7 @@ async def send_dm_when_time_reached():
                 print("Channel not found.")
             await asyncio.sleep(60)  
 
-        if current_time.hour == 6 and current_time.minute == 46: 
+        if current_time.hour == 6 and current_time.minute == 40: 
             channel = bot.get_channel(1148273955728281683)
             if channel:
                 await channel.send("Ending focus session")
