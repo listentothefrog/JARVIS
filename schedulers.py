@@ -48,7 +48,8 @@ async def send_dm_when_time_reached():
             channel = bot.get_channel(1148273955728281683)
             if channel:
                 await channel.send("Ending focus session")
-                await end_focus(user="tren_brahh")  
+                await end_focus(user="tren_brahh")
+                put_computer_to_sleep()  
             else:
                 print("Channel not found.")
             await asyncio.sleep(60)
