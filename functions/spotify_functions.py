@@ -34,7 +34,7 @@ async def play_song(song, user):
             track_uri = [first_track['uri']]
             device = sp.current_playback()
             device_name = device["device"]["name"]
-            await user.send(f"Playing {first_track['name']} by {artist} on {device_name}")
+            await user.send(f"Playing {first_track['name']} by {artist} on the device:'{device_name}'")
             await user.send(first_track['external_urls']['spotify'])
             sp.start_playback(uris=track_uri, position_ms=0, device_id=device_id)
             
