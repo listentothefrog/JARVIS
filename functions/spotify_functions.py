@@ -1,6 +1,6 @@
 import json
 import os
-import pprint
+from pprint import pprint
 from dotenv import load_dotenv, find_dotenv
 import spotipy
 from spotipy import SpotifyOAuth
@@ -32,7 +32,9 @@ async def play_song(song, user):
             first_track = results['tracks']['items'][0]
             artist = first_track['artists'][0]['name']
             track_uri = [first_track['uri']]
-            await user.send(f"Playing {first_track['name']} by {artist}")
+            device = sp.current_playback()
+            device_name = device["device"]["name"]
+            await user.send(f"Playing {first_track['name']} by {artist} on {device_name}")
             await user.send(first_track['external_urls']['spotify'])
             sp.start_playback(uris=track_uri, position_ms=0, device_id=device_id)
             
