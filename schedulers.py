@@ -1,5 +1,5 @@
 # Todos
-# 5:48 AM Start focus session 
+# 6:00 AM Start focus session 
 # 6:30 AM End focus session, turn off computer, shower process 
 # 4:00 PM Start computer, start focus session, homework process
 # 5:00 PM Start sending notifcations on any remaining events in calendar
@@ -35,7 +35,11 @@ async def send_dm_when_time_reached():
     while not bot.is_closed():
         current_time = datetime.now()
         
-        if current_time.hour == 5 and current_time.minute == 46:
+        if current_time.hour == 5 and current_time == 59: 
+            # wake up computer goes here
+            print("wake up function")
+            
+        if current_time.hour == 6 and current_time.minute == 00:
             channel = bot.get_channel(1148273955728281683)
             if channel:
                 await channel.send("Good Morning, Shashank. Starting a focus session ☀️")
