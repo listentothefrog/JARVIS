@@ -8,12 +8,16 @@ NEWS_API_KEY = os.getenv('NEWS_API')
 
 newsapi = NewsApiClient(api_key=NEWS_API_KEY)
 
+def get_top_news_articles(source, num_articles=5):
+    top_headlines = newsapi.get_top_headlines(sources=source)
+    articles = top_headlines['articles'][:num_articles]
 
-top_headlines = newsapi.get_top_headlines(q='tech',
-                                          category='technology',
-                                          language='en',
-                                          country='us')
+    for i, article in enumerate(articles):
+        print(f"Article {i+1}:")
+        print(f"Title: {article['title']}")
+        print(f"Description: {article['description']}")
+        print("")
+
+get_top_news_articles('cnn', num_articles=5)
 
 
-sources = newsapi.get_sources()
-pprint(sources)
