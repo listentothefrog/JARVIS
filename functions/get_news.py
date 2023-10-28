@@ -1,7 +1,6 @@
 import os
 from dotenv import find_dotenv, load_dotenv
 from newsapi import NewsApiClient
-from pprint import pprint
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
 NEWS_API_KEY = os.getenv('NEWS_API')
