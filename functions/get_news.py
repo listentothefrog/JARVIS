@@ -19,17 +19,25 @@ def get_top_news_articles(source, num_articles=5):
     articles = top_headlines['articles'][:num_articles]
 
     engine = pyttsx3.init()
-
+    time.sleep(5)
+    engine.runAndWait()
     for i, article in enumerate(articles):
         print(f"Article {i + 1}:")
         print(f"Title: {article['title']}")
         print(f"Description: {article['description']}")
-        print(article['url'])
-        engine.say(f"{article['title']}")
-        time.sleep(10)
-        print(article['url'])
-    
-    engine.say("I have just send the links for all these articles.")
-    engine.runAndWait()
 
-get_top_news_articles('bbc-news', num_articles=5)
+        engine.say(f"{article['title']}")
+        print(article["url"])
+        engine.runAndWait()
+        
+        engine.say(f"{article['description']}")
+        engine.runAndWait()
+
+    time.sleep(5)
+    print("")
+    engine.say("Please check your messages, where I have attached all the links to these articles.")
+    engine.runAndWait()
+    
+get_top_news_articles('bbc-news', num_articles=2)
+
+engine.runAndWait()
