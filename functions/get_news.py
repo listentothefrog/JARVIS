@@ -14,7 +14,7 @@ engine.setProperty('voice', voices[0].id)
 
 newsapi = NewsApiClient(api_key=NEWS_API_KEY)
 
-def get_top_news_articles(source, num_articles):
+def get_top_news_articles(source, num_articles, user):
     top_headlines = newsapi.get_top_headlines(sources=source)
     articles = top_headlines['articles'][:num_articles]
 
@@ -27,6 +27,7 @@ def get_top_news_articles(source, num_articles):
         time.sleep(2)
         engine.say(f"{article['title']}")
         print(article["url"])
+        user.send(article["url"])
         engine.runAndWait()
         
         engine.say(f"{article['description']}")
@@ -36,7 +37,5 @@ def get_top_news_articles(source, num_articles):
     print("")
     engine.say("Please check your messages where I have attached all the links to these articles.")
     engine.runAndWait()
-    
-get_top_news_articles('bbc-news', num_articles=1)
 
 engine.runAndWait()
