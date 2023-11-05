@@ -11,12 +11,9 @@
 import discord
 from discord.ext import commands
 import os
-import asyncio
 from dotenv import find_dotenv, load_dotenv
 from datetime import datetime
-from functions.focus import start_focus, end_focus
 import time
-from functions.get_news import get_top_news_articles
 from functions.put_computer_to_sleep import put_computer_to_sleep
 
 dotenv_path = find_dotenv()
@@ -36,7 +33,6 @@ async def send_dm_when_time_reached():
         current_time = datetime.now()
         
         if current_time.hour == 5 and current_time == 59: 
-            # wake up computer goes here
             print("wake up function")
         
         
